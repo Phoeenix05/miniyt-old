@@ -1,6 +1,4 @@
 import IINALink from "@/components/IINALink";
-import VideoCard from "@/components/VideoCard";
-import VideoList from "@/components/VideoList";
 
 export default function Home() {
   return (
