@@ -3,6 +3,16 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  // exportPathMap: () => {
+  //   return {
+  //     "/": {
+  //       page: "/"
+  //     },
+  //     "/follows": {
+  //       page: "/follows"
+  //     }
+  //   }
+  // }
   // distDir: "./out"
 }
 

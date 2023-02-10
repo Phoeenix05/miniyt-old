@@ -6,6 +6,7 @@
     "dev": "next dev --turbo --port $npm_package_config_port",
     "dev:wifi": "next dev --hostname '192.168.100.187' --turbo --port $npm_package_config_port",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "browser": "open http://localhost:$npm_package_config_port",
