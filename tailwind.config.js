@@ -22,8 +22,10 @@ module.exports = {
         },
         // "green": {
         "contrast": {
-          100: "#40CF8E",
-          200: "#24B47E"
+          // 100: "#40CF8E",
+          // 200: "#24B47E"
+          "light": "#40CF8E",
+          "dark": "#24B47E"
         },
       },
     },

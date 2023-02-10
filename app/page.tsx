@@ -5,16 +5,8 @@ import VideoList from "@/components/VideoList";
 export default function Home() {
   return (
     <main>
-      <h1>Home</h1>
-      {/* <div className="flex flex-wrap justify-center">
-        <VideoCard />
-        <VideoCard />
-      </div> */}
-      {/* <VideoList>
-        <VideoCard />
-        <VideoCard />
-      </VideoList>
-      <IINALink url="https://www.youtube.com/watch?v=lIV8qIKxVkk" /> */}
+      <IINALink url="https://www.youtube.com/watch?v=lIV8qIKxVkk" />
+      <button className="button default-colors">Hallo</button>
     </main>
   )
 }
