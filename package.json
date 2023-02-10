@@ -6,6 +6,7 @@
     "dev": "next dev --turbo --port $npm_package_config_port",
     "dev:wifi": "next dev --hostname '192.168.100.187' --turbo --port $npm_package_config_port",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "browser": "open http://localhost:$npm_package_config_port",
@@ -29,6 +30,8 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@tauri-apps/api": "^1.2.0",
+    "@tauri-apps/cli": "^1.2.3",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
