@@ -1,14 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface IINALinkProps {
-  youtube_video_url: String
-  children: [React.ReactNode]
+  url: String
+  // children: [React.ReactNode]
 }
 
-export default function IINALink({ youtube_video_url, children }: IINALinkProps) {
+export default function IINALink({ url: yt_video_url }: IINALinkProps) {
   return (
-    <Link href={"iina://weblink?url=" + youtube_video_url}>
-      { children }
+    <Link 
+      className="flex items-center w-40 gap-1 p-1 transition-all duration-100 border-2 rounded-md bg-dark-800 hover:bg-dark-700 border-dark-600 hover:border-dark-500 text-dark-300 hover:text-white"
+      href={"iina://weblink?url=" + yt_video_url}
+    >
+      <Image src="/iina-icon-512.png" alt="iina_app_icon_512x" width={32} height={32} />
+      <p className="text-sm ">Open in IINA</p>
     </Link>
   )
 }
