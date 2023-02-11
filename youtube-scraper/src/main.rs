@@ -45,8 +45,9 @@ fn parse_data(data: &String) -> String {
 
     let re = Regex::new(r#"var ytInitialData = (.+?);</script>"#).unwrap();
     let captures = re.captures(data).unwrap();
-    let result = &captures[1].to_string();
+    let result = &captures[1];
     // &captures[1].to_string()
+    result.to_string()
 }
 
 fn main() -> Result<(), reqwest::Error> {
