@@ -1,5 +1,5 @@
-use std::ffi::CString;
-use std::os::raw::c_char;
+// use std::ffi::CString;
+// use std::os::raw::c_char;
 
 use regex::Regex;
 use reqwest::{
@@ -7,9 +7,12 @@ use reqwest::{
     // blocking::Client,
     Client,
 };
+use tauri::command;
 
-#[no_mangle]
-pub async extern "C" fn get_youtube_search_data() -> *mut c_char {
+// #[no_mangle]
+// pub async extern "C" fn get_youtube_search_data() -> *mut c_char {
+#[command]
+pub async fn get_youtube_search_data(query: String) -> Result<String, reqwest::Error> {
     let mut headers = HeaderMap::new();
     // User-Agent miniyt-scraper or miniyt/scraper
     headers.insert(USER_AGENT, HeaderValue::from_static("miniyt/scraper"));
@@ -30,8 +33,12 @@ pub async extern "C" fn get_youtube_search_data() -> *mut c_char {
     // let result = &captures[1];
     // result.to_string()
 
+    // let encoded_query = "";
+    let url = format!("https://www.youtube.com/results?search_query={}", query);
+
     let res = if let Ok(res) = client
-        .get("https://www.youtube.com/results?search_query=brian+x+stephanie+swoard+art+online")
+        // .get("https://www.youtube.com/results?search_query=brian+x+stephanie+swoard+art+online")
+        .get(url)
         .headers(headers)
         // .send()
         .send()
@@ -48,6 +55,12 @@ pub async extern "C" fn get_youtube_search_data() -> *mut c_char {
         "Error occurred".to_string()
     };
 
-    let c_res = CString::new(res).unwrap();
-    c_res.into_raw()
+    // if cfg_if!(target_arch = "wasm32") {
+    // if #[cfg(target_arch = "wasm32")] {
+    //     let c_res = CString::new(res).unwrap();
+    //     c_res.into_raw()
+    // } else {
+    // }
+
+    Ok(res)
 }
