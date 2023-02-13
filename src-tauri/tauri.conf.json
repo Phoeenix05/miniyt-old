@@ -12,8 +12,13 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "all": false,
+      "window": {
+        "startDragging": true,
+        "all": false
+      }
     },
+    "macOSPrivateApi": true,
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -56,12 +61,14 @@
     "windows": [
       {
         "fullscreen": false,
-        "minHeight": 600,
+        "minHeight": 640,
         "resizable": true,
         "title": "MiniYT",
-        "minWidth": 800,
+        "minWidth": 640,
         "height": 800,
-        "width": 1280
+        "width": 1280,
+        "hiddenTitle": true,
+        "titleBarStyle": "Overlay"
       }
     ]
   }

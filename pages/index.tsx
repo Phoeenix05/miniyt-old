@@ -6,7 +6,7 @@ import Head from 'next/head'
 export default function HomePage() {
   return (
     // <>Hallo Next.js</>
-    <div>
+    <div className='page'>
       <Head>
         <title>MiniYT</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -14,12 +14,12 @@ export default function HomePage() {
         <meta name="theme-color" content="#1C1C1C"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-      <Navbar />
-
       <main>
         <IINALink url="https://www.youtube.com/watch?v=lIV8qIKxVkk" />
         <button className="button default-colors">Hallo</button>
+        {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/lIV8qIKxVkk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KXRoWk-Ic5E" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2mdgQ9h4IR0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
       </main>
     </div>
   )
