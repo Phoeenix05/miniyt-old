@@ -27,6 +27,9 @@
     "paths": {
       "@/components/*": [
         "./components/*"
+      ],
+      "@/styles/*": [
+        "./styles/*"
       ]
     }
   },
@@ -36,7 +39,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "./out/types/**/*.ts"
-  ],
+, "pages/_app.js"  ],
   "exclude": [
     "node_modules",
     "src-tauri"

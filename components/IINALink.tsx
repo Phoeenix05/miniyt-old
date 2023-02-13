@@ -7,9 +7,9 @@ interface IINALinkProps {
 
 export default function IINALink({ url: yt_video_url }: IINALinkProps) {
   // IINA Is only available on MacOS
-  if (process.platform != "darwin") {
-    return (<></>)
-  } else {
+  // if (process.platform != "darwin") {
+  //   return (<></>)
+  // } else {
     return (
       <Link 
         className="flex items-center gap-1 pr-3 button default-colors"
@@ -21,5 +21,5 @@ export default function IINALink({ url: yt_video_url }: IINALinkProps) {
         </p>
       </Link>
     )
-  }
+  // }
 }
