@@ -6,7 +6,6 @@ import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    // <>Hallo Next.js</>
     <div className='page'>
       <Head>
         <title>MiniYT</title>
@@ -16,12 +15,12 @@ export default function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=''>
-        <IINALink url="https://www.youtube.com/watch?v=lIV8qIKxVkk" />
-        <button className="button default-colors">Hallo</button>
+        {/* <IINALink url="https://www.youtube.com/watch?v=lIV8qIKxVkk" />
+        <button className="button default-colors">Hallo</button> */}
         <Link href={{ pathname: "/watch", query: { video_id: "lIV8qIKxVkk" } }}>Watch</Link>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lIV8qIKxVkk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/lIV8qIKxVkk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/KXRoWk-Ic5E" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2mdgQ9h4IR0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2mdgQ9h4IR0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
       </main>
     </div>
   )
