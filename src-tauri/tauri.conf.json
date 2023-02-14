@@ -14,8 +14,7 @@
     "allowlist": {
       "all": false,
       "window": {
-        "startDragging": true,
-        "all": false
+        "all": true
       }
     },
     "macOSPrivateApi": true,

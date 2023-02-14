@@ -1,10 +1,13 @@
-import IINALink from '@/components/IINALink'
+// import IINALink from '@/components/IINALink'
 // import Navbar from '@/components/Navbar'
 // import '@/styles/globals.css'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function HomePage() {
+  const [id, setId] = useState("lIV8qIKxVkk")
+  
   return (
     <div className='page'>
       <Head>
@@ -14,13 +17,15 @@ export default function HomePage() {
         <meta name="theme-color" content="#1C1C1C"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=''>
+      <main className='mt-7'>
         {/* <IINALink url="https://www.youtube.com/watch?v=lIV8qIKxVkk" />
         <button className="button default-colors">Hallo</button> */}
         <Link href={{ pathname: "/watch", query: { video_id: "lIV8qIKxVkk" } }}>Watch</Link>
         {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/lIV8qIKxVkk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/KXRoWk-Ic5E" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2mdgQ9h4IR0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
+        <input type="text" onChange={(e) => setId(e.target.value)} />
+        <Link href={{ pathname: "/watch", query: { video_id: id } }}>Watch</Link>
       </main>
     </div>
   )
