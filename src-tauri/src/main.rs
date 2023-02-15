@@ -4,10 +4,11 @@
 )]
 
 mod youtube_scraper;
+use youtube_scraper::{get_search_data, get_user_data};
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![youtube_scraper::get_youtube_search_data])
+        .invoke_handler(tauri::generate_handler![get_search_data, get_user_data])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
