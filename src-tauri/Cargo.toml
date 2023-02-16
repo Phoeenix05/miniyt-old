@@ -21,6 +21,7 @@ tauri = { version = "1.2.4", features = ["macos-private-api", "window-all"] }
 cfg-if = "1.0.0"
 reqwest = { version = "0.11.14", features = ["blocking"] }
 regex = "1.7.1"
+lazy_static = "1.4.0"
 
 [features]
 # by default Tauri runs in production mode

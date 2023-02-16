@@ -43,6 +43,7 @@ name = "app"
 version = "0.1.0"
 dependencies = [
  "cfg-if",
+ "lazy_static",
  "regex",
  "reqwest",
  "serde",
