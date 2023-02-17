@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port $npm_package_config_port",
-    "dev:wifi": "next dev --hostname '192.168.100.187' --port $npm_package_config_port",
-    "build": "next build",
-    "export": "next export",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "nuxt dev --port $npm_package_config_port",
+    "dev:wifi": "nuxt dev --hostname '192.168.100.187' --port $npm_package_config_port",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start",
+    "preview": "nuxt preview",
+    "prepare": "nuxt prepare",
     "browser": "open http://localhost:$npm_package_config_port",
     "github": "open https://github.com/Phoeenix05/miniyt"
   },
@@ -16,29 +17,20 @@
     "port": "3000"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.10",
-    "@heroicons/react": "^2.0.15",
-    "@next/font": "13.1.6",
     "@supabase/supabase-js": "^2.7.1",
-    "@types/node": "18.13.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.10",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "next": "13.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "nuxt": "^3.2.0",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",
     "@commitlint/config-conventional": "^17.4.3",
+    "@nuxtjs/tailwindcss": "^6.4.1",
     "@tauri-apps/api": "^1.2.0",
     "@tauri-apps/cli": "^1.2.3",
-    "autoprefixer": "^10.4.13",
-    "husky": "^8.0.3",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "husky": "^8.0.3"
   },
   "engines": {
     "node": ">=19.4.0",
