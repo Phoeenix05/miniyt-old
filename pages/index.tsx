@@ -4,11 +4,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
-import { invoke } from '@tauri-apps/api/tauri'
+// import { invoke } from '@tauri-apps/api/tauri'
 
 export default function HomePage() {
-  let data = invoke<String>("get_user_playlists", { "id": "UCgGjBqZZtAjxfpGSba7d6ww" })
-  console.log(data)
+  // let data = invoke<String>("get_user_playlists", { "id": "UCgGjBqZZtAjxfpGSba7d6ww" })
+  // console.log(data)
   
   const [id, setId] = useState("lIV8qIKxVkk")
   

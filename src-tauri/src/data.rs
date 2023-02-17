@@ -2,8 +2,11 @@ use std::{str::FromStr, sync::Mutex};
 
 use lazy_static::lazy_static;
 use reqwest::{
-    blocking::Client,
-    header::{HeaderMap, HeaderValue, ACCEPT_ENCODING, ACCEPT_LANGUAGE, USER_AGENT, ACCEPT, AUTHORIZATION},
+    header::{
+        HeaderMap, HeaderValue, ACCEPT, ACCEPT_ENCODING, ACCEPT_LANGUAGE, AUTHORIZATION, USER_AGENT,
+    },
+    // blocking::Client,
+    Client,
 };
 
 use crate::interface::user_playlist::UserPlaylistsData;
@@ -23,7 +26,6 @@ impl Config {
         // headers.insert(AUTHORIZATION, HeaderValue::from_str(&std::env::var("YT_DATA_API_KEY").unwrap_or("".to_string())));
 
         Self { headers }
-        // todo!()
     }
 }
 
@@ -33,49 +35,31 @@ lazy_static! {
 
 pub fn query_param(param_name: &str, value: &str) -> String {
     format!("{}={}", param_name, value)
-    // todo!()
 }
 
-/// It takes a user id, makes a request to the YouTube API, and returns the response as a JSON string
-///
-/// Arguments:
-///
-/// * `user_id`: The ID of the user whose playlists you want to retrieve.
-///
-/// Returns:
-///
-/// A string of JSON
-#[tauri::command]
-// pub async fn get_user_playlists(user_id: String) -> String {
-pub async fn get_user_playlists(id: String) -> String {
-    let config = CONFIG_INSTANCE.lock().unwrap();
-    // config.headers
+// /// It takes a user id, makes a request to the YouTube API, and returns the response as a JSON string
+// ///
+// /// Arguments:
+// ///
+// /// * `user_id`: The ID of the user whose playlists you want to retrieve.
+// ///
+// /// Returns:
+// ///
+// /// A string of JSON
+// #[tauri::command]
+// pub async fn get_user_playlists(user_id: String) -> Result<String, Box<dyn std::error::Error>> {
+//     let config = CONFIG_INSTANCE.lock().unwrap();
 
-    // let url = format!("https://www.googleapis.com/youtube/v3/playlists");
-    let mut url =
-        reqwest::Url::from_str("https://www.googleapis.com/youtube/v3/playlists").unwrap();
-    // url.set_query(Some(format!("channelId={}", name).as_str()));
-    url.set_query(Some(&query_param("channelId", &id)));
-    url.set_query(Some(&query_param("part", "snippet,player")));
+//     let youtube_playlists_url = "https://www.googleapis.com/youtube/v3/playlists";
+//     let mut url = reqwest::Url::from_str(youtube_playlists_url).unwrap();
+//     url.set_query(Some(&query_param("channelId", &user_id)));
+//     url.set_query(Some(&query_param("part", "snippet,player")));
 
-    let client = Client::new();
+//     let client = Client::new();
 
-    let res: Option<UserPlaylistsData> =
-        match client.get(url).headers(config.headers.clone()).send() {
-            Ok(res) => {
-                let data = res.text().unwrap();
-                let json: UserPlaylistsData = serde_json::from_str(&data).unwrap();
-                // todo!()
-                Some(json)
-            }
-            // Err(err) => todo!(),
-            Err(err) => {
-                eprintln!("{}", err);
-                None
-            }
-        };
+//     let res = client.get(url).headers(config.headers.clone()).send().await?;
+//     let data = res.text().await?;
+//     let json: UserPlaylistsData = serde_json::from_str(&data)?;
 
-    serde_json::to_string(&res).unwrap()
-    // res.unwrap()
-    // todo!()
-}
+//     Ok(serde_json::to_string(&Some(json)).unwrap())
+// }
