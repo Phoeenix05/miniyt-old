@@ -3,16 +3,23 @@
     windows_subsystem = "windows"
 )]
 
-// mod youtube_scraper;
-// use youtube_scraper::{get_search_data, get_user_data};
+// #[macro_use]
+// extern crate rocket;
 
-mod data;
-mod interface;
+#[rocket::get("/playlists")]
+async fn playlists() -> &'static str {
+    "playlists"
+}
 
 fn main() {
     tauri::Builder::default()
-        // .invoke_handler(tauri::generate_handler![get_search_data, get_user_data])
-        // .invoke_handler(tauri::generate_handler![data::get_user_playlists])
+        .setup(|app| {
+            tauri::async_runtime::spawn(
+                rocket::build().mount("/api", rocket::routes![playlists]).launch()
+            );
+            
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
