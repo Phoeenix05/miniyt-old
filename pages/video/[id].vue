@@ -5,8 +5,6 @@ const { id } = route.params
 const url = "https://www.youtube.com/embed/" + id
 </script>
 
-<!-- <script lang="ts"></script> -->
-
 <template>
     <iframe 
         width="560" 

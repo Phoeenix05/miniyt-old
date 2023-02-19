@@ -1,30 +1,13 @@
 <script setup lang="ts">
-// const route = useRoute()
-// import { invoke } from "@tauri-apps/api/tauri"
 import { BaseDirectory, createDir, exists, readTextFile, writeTextFile } from "@tauri-apps/api/fs";
 
 async function refresh_videos() {
-    // // const data = await invoke<Array<String>>("read_channels", { profile: "default" })
-    // if (await exists("data/channels.json", { dir: BaseDirectory.AppData })) {
-    //     const file_data = await readTextFile("data/channels.json", { dir: BaseDirectory.AppData })
-    //     const json: IJsonData = JSON.parse(file_data)
-    //     // console.log(json)
-    //     return json
-    // } else {
-    //     // console.log("Doesn't exist")
-    //     await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
-    //     await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
-    //     refresh_videos()
-    // }
-    // // console.log(BaseDirectory.AppConfig)
     if (!await exists("data/channels.json", { dir: BaseDirectory.AppData })) {
         await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
         await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
     }
-    
     const file_data = await readTextFile("data/channels.json", { dir: BaseDirectory.AppData })
     const json: IJsonData = JSON.parse(file_data)
-    // console.log(json)
     return json
 }
 
@@ -37,7 +20,6 @@ interface IJsonData {
     ]
 }
 
-// let data = await refresh_videos().then(data => data)
 let { data, pending } = useAsyncData("channels", () => refresh_videos().then(data => data))
 let refresh = () => refreshNuxtData("channels")
 </script>
@@ -52,7 +34,6 @@ let refresh = () => refreshNuxtData("channels")
     </div>
     <div>
         <p v-for="channel in data?.profiles[0].channels" v-bind:key="channel">
-            <!-- <nuxt-link :to="channel"></nuxt-link> -->
             {{ channel }}
         </p>
     </div>
