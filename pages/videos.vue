@@ -1,23 +1,20 @@
 <script setup lang="ts">
 import { BaseDirectory, createDir, exists, readTextFile, writeTextFile } from "@tauri-apps/api/fs";
+import { IChannelList } from "~~/utils/fs";
 
 async function refresh_videos() {
     if (!await exists("data/channels.json", { dir: BaseDirectory.AppData })) {
         await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
         await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
     }
+    if (!await file_exists("data/channels.json")) {
+        await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
+        await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
+    }
     const file_data = await readTextFile("data/channels.json", { dir: BaseDirectory.AppData })
-    const json: IJsonData = JSON.parse(file_data)
+    const json: IChannelList = JSON.parse(file_data)
     return json
-}
-
-interface IJsonData {
-    profiles: [
-        {
-            name: string,
-            channels: string[]
-        }
-    ]
+    // return await get_data()
 }
 
 let { data, pending } = useAsyncData("channels", () => refresh_videos().then(data => data))
@@ -32,8 +29,8 @@ let refresh = () => refreshNuxtData("channels")
             </svg>
         </button>
     </div>
-    <div>
-        <p v-for="channel in data?.profiles[0].channels" v-bind:key="channel">
+    <div v-if="data?.profiles">
+        <p v-for="channel in data?.profiles[0].channels" v-bind:key="channel.name">
             {{ channel }}
         </p>
     </div>
