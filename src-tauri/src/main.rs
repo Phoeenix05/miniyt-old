@@ -14,10 +14,25 @@
 //     Json("playlists".to_string())
 // }
 
-#[tauri::command]
-async fn hallo() -> String {
-    "Hallo".to_string()
-}
+// #[tauri::command]
+// async fn hallo() -> String {
+//     "Hallo".to_string()
+// }
+
+// #[tauri::command]
+// async fn read_channels(profile: String) -> Option<Vec<String>> {
+//     todo!()
+// }
+
+// #[tauri::command]
+// async fn write_channels() -> bool {
+//     todo!()
+// }
+
+// #[tauri::command]
+// async fn update_channels() -> bool {
+//     todo!()
+// }
 
 fn main() {
     tauri::Builder::default()
@@ -29,7 +44,8 @@ fn main() {
         //     );
         //     Ok(())
         // })
-        .invoke_handler(tauri::generate_handler![hallo])
+        // .invoke_handler(tauri::generate_handler![hallo])
+        // .invoke_handler(tauri::generate_handler![read_channels, write_channels, update_channels])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt dev --port $npm_package_config_port",
+    "dev": "nuxt dev --port $npm_package_config_port --dotenv .env.local",
     "dev:wifi": "nuxt dev --hostname '192.168.100.187' --port $npm_package_config_port",
     "build": "nuxt build",
     "generate": "nuxt generate",
