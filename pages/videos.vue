@@ -3,10 +3,10 @@ import { BaseDirectory, createDir, exists, readTextFile, writeTextFile } from "@
 import { IChannelList } from "~~/utils/fs";
 
 async function refresh_videos() {
-    if (!await exists("data/channels.json", { dir: BaseDirectory.AppData })) {
-        await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
-        await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
-    }
+    // if (!await exists("data/channels.json", { dir: BaseDirectory.AppData })) {
+    //     await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
+    //     await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
+    // }
     if (!await file_exists("data/channels.json")) {
         await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
         await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })

@@ -23,7 +23,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
 
@@ -37,7 +37,7 @@
 <h3 align="center">MiniYT</h3>
 
   <p align="center">
-    project_description
+    A minimalistic YouTube application removing things you don't need and lets you enjoy the videos you want to watch from your subscriptions
     <br />
     <a href="https://github.com/phoeenix05/miniyt"><strong>Explore the docs »</strong></a>
     <br />
@@ -81,9 +81,9 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 <!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `phoeenix05`, `miniyt`, `Pho3n1x05`, `linkedin_username`, `icloud`, `anton.e.fredriksson`, `MiniYT`, `project_description` -->
 
@@ -93,14 +93,15 @@
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-<!-- * [![Vue][Vue.js]][Vue-url] -->
+<!-- * [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url] -->
+* [![Vue][Vue.js]][Vue-url]
 <!-- * [![Angular][Angular.io]][Angular-url] -->
 <!-- * [![Svelte][Svelte.dev]][Svelte-url] -->
 <!-- * [![Laravel][Laravel.com]][Laravel-url] -->
 <!-- * [![Bootstrap][Bootstrap.com]][Bootstrap-url] -->
 <!-- * [![JQuery][JQuery.com]][JQuery-url] -->
+* [![Tauri][Tauri.app]][Tauri-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,25 +116,44 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* pnpm and rust
   ```sh
-  npm install npm@latest -g
+  # Install pnpm on POSIX systems
+  curl -fsSL https://get.pnpm.io/install.sh | sh -
+  # If you don't have curl installed, you would like to use wget:
+  wget -qO- https://get.pnpm.io/install.sh | sh -
+  
+  # Windows
+  iwr https://get.pnpm.io/install.ps1 -useb | iex
+
+  # Alpine Linux
+  # Check https://pnpm.io/installation
+  
+  # Update pnpm
+  pnpm install -g pnpm
+
+  # MacOS and Linux
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+  # Windows
+  # Download rustup-init.exe from rust-lang.org
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [Google Cloud Console](https://console.cloud.google.com)
 2. Clone the repo
    ```sh
    git clone https://github.com/phoeenix05/miniyt.git
+   gh repo clone phoeenix05/miniyt
    ```
-3. Install NPM packages
+3. Install project dependencies
    ```sh
-   npm install
+   pnpm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. Enter your API in `.env.local`
+   ```python
+   YT_DATA_API_KEY = "ENTER YOUR API"
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -141,24 +161,25 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!-- ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
+<!-- - [ ] Feature 1
 - [ ] Feature 2
 - [ ] Feature 3
-    - [ ] Nested Feature
+    - [ ] Nested Feature -->
 
+[Project roadmap](https://github.com/users/Phoeenix05/projects/2).
 See the [open issues](https://github.com/phoeenix05/miniyt/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -204,13 +225,13 @@ Project Link: [https://github.com/phoeenix05/miniyt](https://github.com/phoeenix
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- ## Acknowledgments
 
 * []()
 * []()
 * []()
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
@@ -245,3 +266,5 @@ Project Link: [https://github.com/phoeenix05/miniyt](https://github.com/phoeenix
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[Tauri.app]: https://img.shields.io/badge/tauri-121212?style=for-the-badge&logo=tauri&logoColor=yellow
+[Tauri-url]: https://tauri.app 
