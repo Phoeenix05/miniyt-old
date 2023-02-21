@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { BaseDirectory, createDir, exists, readTextFile, writeTextFile } from "@tauri-apps/api/fs";
+import { BaseDirectory, createDir, readTextFile, writeTextFile } from "@tauri-apps/api/fs";
 import { IChannelList } from "~~/utils/fs";
 
 async function refresh_videos() {
-    // if (!await exists("data/channels.json", { dir: BaseDirectory.AppData })) {
-    //     await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
-    //     await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
-    // }
     if (!await file_exists("data/channels.json")) {
         await createDir("data", { dir: BaseDirectory.AppData, recursive: true })
         await writeTextFile("data/channels.json", "{}", { dir: BaseDirectory.AppData })
@@ -14,7 +10,6 @@ async function refresh_videos() {
     const file_data = await readTextFile("data/channels.json", { dir: BaseDirectory.AppData })
     const json: IChannelList = JSON.parse(file_data)
     return json
-    // return await get_data()
 }
 
 let { data, pending } = useAsyncData("channels", () => refresh_videos().then(data => data))

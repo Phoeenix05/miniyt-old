@@ -46,9 +46,6 @@ export async function get_data(): Promise<IChannelList> {
 }
 
 export async function update_data(channel: Channel): Promise<Boolean> {
-    // if (!await file_exists("data/channels.json")) {
-    //     await create_data_file()
-    // }
     let data = await get_data()
     if (!data || !data?.profiles) {
         return false
