@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+// import { appWindow } from "@tauri-apps/api/window"
+
+// appWindow.setResizable(true)
+
+// appWindow.setPl
+
+</script>
 
 <template>
     <div>

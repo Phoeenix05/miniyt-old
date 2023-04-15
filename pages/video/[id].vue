@@ -14,5 +14,5 @@ const url = "https://www.youtube.com/embed/" + id
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen></iframe>
-    <!-- <IINALink :video_id="id"/> -->
+    <IINALink :video_id="id"/>
 </template>
