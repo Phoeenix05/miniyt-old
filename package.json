@@ -9,9 +9,7 @@
     "generate": "nuxt generate",
     "start": "nuxt start",
     "preview": "nuxt preview",
-    "prepare": "nuxt prepare",
-    "browser": "open http://localhost:$npm_package_config_port",
-    "github": "open https://github.com/Phoeenix05/miniyt"
+    "prepare": "nuxt prepare"
   },
   "config": {
     "port": "3000"
@@ -25,8 +23,6 @@
     "webpack": "^5.75.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.3",
-    "@commitlint/config-conventional": "^17.4.3",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "@tauri-apps/api": "^1.2.0",
     "@tauri-apps/cli": "^1.2.3",
