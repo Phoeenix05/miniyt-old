@@ -1,5 +1,5 @@
 [workspace]
 members = [
     "src-tauri",
-    "scraper"
+    "miniyt_scraper"
 ]
