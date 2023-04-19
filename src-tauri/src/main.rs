@@ -3,13 +3,12 @@
     windows_subsystem = "windows"
 )]
 
-
+// use miniyt_scraper::*;
 
 #[tauri::command]
-fn search_query(q: String) -> String {
-    
-    
-    "".to_string()
+async fn search_query(q: String) -> Result<String, String> {
+    // let query = miniyt_scraper::Query {};
+    miniyt_scraper::search_query(q).await
 }
 
 fn main() {
