@@ -9,6 +9,7 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+regex = "1.7.3"
 # tauri = "1.2.4"
 reqwest = "0.11.16"
 serde = { version = "1.0.160", features = ["derive"] }

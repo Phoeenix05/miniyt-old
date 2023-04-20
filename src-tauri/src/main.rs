@@ -6,7 +6,7 @@
 // use miniyt_scraper::*;
 
 #[tauri::command]
-async fn search_query(q: String) -> Result<String, String> {
+async fn search_query(q: String) -> Result<serde_json::Value, String> {
     // let query = miniyt_scraper::Query {};
     miniyt_scraper::search_query(q).await
 }

@@ -1,15 +1,17 @@
 <script setup>
-// import { appWindow } from "@tauri-apps/api/window"
+// import { invoke } from "@tauri-apps/api/tauri"
 
-// appWindow.setResizable(true)
-
-// appWindow.setPl
-
+// const data = await invoke("search_query", { q: "Sword Art Online" })
+// console.log(data)
 </script>
 
 <template>
+    <searchbar />
     <div>
         <nuxt-link to="/video/QRDmDPFySlU">Watch</nuxt-link>
+        <br>
         <nuxt-link to="/videos">Videos</nuxt-link>
+        <br>
+        <nuxt-link to="/search/Sword Art Online">Search</nuxt-link>
     </div>
 </template>
