@@ -1,17 +1,25 @@
 <script setup>
-// import { invoke } from "@tauri-apps/api/tauri"
-
-// const data = await invoke("search_query", { q: "Sword Art Online" })
-// console.log(data)
+const id = ref("QRDmDPFySlU")
 </script>
 
 <template>
-    <searchbar />
-    <div>
+    <NuxtLayout>
+        <!-- <Btn title="Hallo" path="/search/Sword Art Online" /> -->
+        <input :value="id" type="text">
+        <nuxt-link :to="'/video/' + id">Search</nuxt-link>
+        <br>
         <nuxt-link to="/video/QRDmDPFySlU">Watch</nuxt-link>
+    </NuxtLayout>
+    <!-- <div>
         <br>
         <nuxt-link to="/videos">Videos</nuxt-link>
         <br>
         <nuxt-link to="/search/Sword Art Online">Search</nuxt-link>
-    </div>
+    </div> -->
 </template>
+
+<style>
+html {
+    background-color: theme("colors.dark.900");
+}
+</style>

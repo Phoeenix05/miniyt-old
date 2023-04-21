@@ -81,9 +81,7 @@
         "title": "MiniYT",
         "minWidth": 640,
         "height": 800,
-        "width": 1280,
-        "hiddenTitle": true,
-        "titleBarStyle": "Overlay"
+        "width": 1280
       }
     ]
   }
