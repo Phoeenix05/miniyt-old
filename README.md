@@ -1,3 +1,5 @@
+# I'M NOT CURRENTLY WORKING ON THIS APP AS I'M WORKING [MANGADEX READER](https://github.com/phoeenix05/mangadex-reader)
+
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
