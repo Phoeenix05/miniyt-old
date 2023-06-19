@@ -18,7 +18,7 @@ tauri-build = { version = "1.2.1", features = [] }
 tauri = { version = "1.2.4", features = ["devtools", "fs-copy-file", "fs-create-dir", "fs-exists", "fs-read-file", "fs-write-file", "macos-private-api", "window-all"] }
 reqwest = { version = "0.11.16", features = ["blocking"] }
 miniyt_scraper = { path = "../miniyt_scraper" }
-serde_json = "1.0.96"
+serde_json = "1.0.97"
 # anyhow = "1.0.69"
 
 [features]
