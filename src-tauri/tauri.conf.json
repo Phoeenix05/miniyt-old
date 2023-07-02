@@ -17,6 +17,13 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "http": {
+        "all": true,
+        "request": false,
+        "scope": [
+          "https://*.googlevideo.com/videoplayback"
+        ]
       }
     },
     "bundle": {
