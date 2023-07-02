@@ -4,7 +4,7 @@ import { Show, createResource } from "solid-js"
 const fetchVideoData = async () => {
     const params = useParams()
 
-    const data = await fetch(`https://inv.zzls.xyz/api/v1/videos/${params.id}`)
+    const data = await fetch(`https://inv.zzls.xyz/api/v1/videos/${params.id}`, { cache: "default", })
     const json = await data.json()
     console.log(json)
     
@@ -16,7 +16,9 @@ export const Video = () => {
     
     return (
         <div>
-            <A href="/">Home</A>
+            <div>
+                <A href="/">Home</A>
+            </div>
             <Show when={!data.loading} fallback={<>Loading...</>}>
                 <video
                     controls

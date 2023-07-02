@@ -1,10 +1,13 @@
 import { A, useParams } from "@solidjs/router"
-import { Show, createResource } from "solid-js"
+import { For, Show, createResource } from "solid-js"
+import { VideoCard } from "../components/video-card"
 
 const fetchSearchData = async () => {
     const params = useParams()
 
-    const data = await fetch(`https://invidious.tiekoetter.com/api/v1/search/?q=${params.q}&page=1&sort_by=relevance&date=&duration=&type=all`)
+    const data = await fetch(`https://invidious.tiekoetter.com/api/v1/search/?q=${params.q}&page=1&sort_by=relevance&date=&duration=&type=all`, {
+        cache: "default",
+    })
     const json = await data.json()
     return json
 }
@@ -14,9 +17,13 @@ export const Search = () => {
     
     return (
         <div>
-            <A href="/">Home</A>
+            <div>
+                <A href="/">Home</A>
+            </div>
             <Show when={!data.loading} fallback={<>Loading...</>}>
-                {JSON.stringify(data(), null, 2)}
+                <For each={data()}>
+                    {(video, _i) => <VideoCard title={video.title} videoId={video.videoId} />}
+                </For>
             </Show>
         </div>
     )
