@@ -1,37 +1,24 @@
 {
   "name": "miniyt",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0",
+  "description": "",
   "scripts": {
-    "dev": "nuxt dev --port $npm_package_config_port --dotenv .env.local",
-    "dev:wifi": "nuxt dev --hostname '192.168.100.187' --port $npm_package_config_port",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start",
-    "preview": "nuxt preview",
-    "prepare": "nuxt prepare"
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "tauri": "tauri"
   },
-  "config": {
-    "port": "3000"
-  },
+  "license": "MIT",
   "dependencies": {
-    "@supabase/supabase-js": "^2.7.1",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "nuxt": "^3.2.0",
-    "typescript": "^5.0.4",
-    "webpack": "^5.75.0"
+    "solid-js": "^1.7.0",
+    "@tauri-apps/api": "^1.4.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.4.1",
-    "@tauri-apps/api": "^1.2.0",
-    "@tauri-apps/cli": "^1.2.3",
-    "husky": "^8.0.3"
-  },
-  "engines": {
-    "node": ">=19.4.0",
-    "npm": "please-use-pnpm",
-    "yarn": "please-use-pnpm",
-    "pnpm": ">=7.27.0"
+    "@types/node": "^18.7.10",
+    "typescript": "^4.9.5",
+    "vite": "^4.2.1",
+    "vite-plugin-solid": "^2.5.0",
+    "@tauri-apps/cli": "^1.4.0"
   }
 }

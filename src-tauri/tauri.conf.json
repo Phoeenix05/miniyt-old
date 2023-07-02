@@ -1,10 +1,11 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "pnpm build && pnpm generate",
     "beforeDevCommand": "pnpm dev",
-    "devPath": "http://localhost:3000",
-    "distDir": "../dist"
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "miniyt",
@@ -13,65 +14,25 @@
   "tauri": {
     "allowlist": {
       "all": false,
-      "window": {
-        "all": true
-      },
-      "fs": {
+      "shell": {
         "all": false,
-        "copyFile": true,
-        "createDir": true,
-        "exists": true,
-        "readDir": false,
-        "readFile": true,
-        "removeDir": false,
-        "removeFile": false,
-        "renameFile": false,
-        "scope": [
-          "$HOME/Library/Application Support/com.github.phoeenix05/**",
-          "$APPDATA/com.github.phoeenix05/**"
-        ],
-        "writeFile": true
+        "open": true
       }
     },
-    "macOSPrivateApi": true,
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
+      "targets": "all",
+      "identifier": "com.github.phoeenix05.miniyt",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ],
-      "identifier": "com.github.phoeenix05",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
-      }
+      ]
     },
     "security": {
       "csp": null
-    },
-    "updater": {
-      "active": false
     },
     "windows": [
       {
