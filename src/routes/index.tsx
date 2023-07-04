@@ -6,7 +6,7 @@ export const App = () => {
     const [id, setId] = createSignal("")
     
     return (
-        <div>
+        <>
             <div>
                 <input value={query()} onInput={(e) => setQuery(e.target.value)} />
                 <A href={`/search/${query()}`}>Search</A>
@@ -16,6 +16,6 @@ export const App = () => {
                 <input value={id()} onInput={(e) => setId(e.target.value)} />
                 <A href={`/video/${id()}`}>Video</A>
             </div>
-        </div>
+        </>
     )
 }

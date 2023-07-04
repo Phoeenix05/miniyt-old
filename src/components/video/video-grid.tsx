@@ -1,20 +1,17 @@
 import { For } from "solid-js"
 import { VideoCard } from "./video-card"
+import { SearchResult } from "../../util/invidious/search"
 
 export interface Props {
-    data: any
+    data: SearchResult[]
 }
 
 export const VideoGrid = (props: Props) => {
     return (
-        <div class="grid gap-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 content-stretch w-full">
+        <div class="grid gap-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 content-stretch w-full mx-2">
             <For each={props.data}>
                 {(video, _i) => (
-                    <VideoCard 
-                        title={video.title} 
-                        bannerUrl={video.videoThumbnails?.at(4).url} 
-                        videoId={video.videoId} 
-                    />
+                    <VideoCard data={video} />
                 )}
             </For>
         </div>

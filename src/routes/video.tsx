@@ -1,11 +1,13 @@
 import { A, useParams } from "@solidjs/router"
 import { createResource } from "solid-js"
+import { VideoResult } from "../util/invidious/video"
 
 const fetchVideoData = async () => {
     const params = useParams()
 
     const data = await fetch(`https://inv.zzls.xyz/api/v1/videos/${params.id}`, { cache: "default", })
-    const json = await data.json()
+    const json: VideoResult = await data.json()
+    return json
     // console.log(json)
 
     // const adaptiveFormats = json.adaptiveFormats
@@ -24,19 +26,15 @@ const fetchVideoData = async () => {
     //         h264Formats.push(format)
     //     }
     // })
-    
-    return {
-        data: json,
-        // formats: [...audioFormats, ...h264Formats]
-        formats: json.formatStreams
-    }
+
+    // return [...audioFormats, ...h264Formats]
 }
 
 export const Video = () => {
     const [data] = createResource(fetchVideoData)
     
     return (
-        <div>
+        <>
             <div>
                 <A href="/">Home</A>
             </div>
@@ -44,16 +42,10 @@ export const Video = () => {
                 class="video-js vjs-default-skin"
                 controls
                 preload="auto"
-                poster={data()?.data.videoThumbnails[0].url}
-                dash-src={data()?.data.dashUrl}
-                src={data()?.formats.slice(-1).pop().url}
-                // src={data()?.data.formatStreams[2].url}
+                poster={data()?.videoThumbnails[0].url}
+                src={data()?.formatStreams.at(-1)?.url}
             >
-                {/* <source id={data().adaptiveFormats[19].index + "_source"} src={data().adaptiveFormats[19].url}/> */}
-                {/* <For each={data()?.formats}>{(format) => (
-                    <source id={format.index + "_source"} src={format.url} type={format.type} />
-                )}</For> */}
             </video>
-        </div>
+        </>
     )
 }
