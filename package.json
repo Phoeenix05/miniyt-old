@@ -18,7 +18,7 @@
     "@supabase/supabase-js": "^2.7.1",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
-    "nuxt": "^3.2.0",
+    "nuxt": "^3.7.1",
     "typescript": "^5.0.4",
     "webpack": "^5.75.0"
   },
