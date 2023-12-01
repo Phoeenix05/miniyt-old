@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "bun run dev",
+    "beforeBuildCommand": "bun run build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": true
@@ -21,9 +21,7 @@
       "http": {
         "all": true,
         "request": false,
-        "scope": [
-          "https://*.googlevideo.com/videoplayback"
-        ]
+        "scope": []
       }
     },
     "bundle": {
