@@ -1,0 +1,7 @@
+<ul>
+    @for (item of links; track $index) {
+    <li>
+        <a [routerLink]="item.link">{{ item.title }}</a>
+    </li>
+    }
+</ul>

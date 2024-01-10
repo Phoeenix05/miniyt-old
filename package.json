@@ -1,37 +1,40 @@
 {
   "name": "miniyt",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "dev": "nuxt dev --port $npm_package_config_port --dotenv .env.local",
-    "dev:wifi": "nuxt dev --hostname '192.168.100.187' --port $npm_package_config_port",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start",
-    "preview": "nuxt preview",
-    "prepare": "nuxt prepare"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
-  "config": {
-    "port": "3000"
-  },
+  "private": true,
   "dependencies": {
-    "@supabase/supabase-js": "^2.7.1",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "nuxt": "^3.2.0",
-    "typescript": "^5.0.4",
-    "webpack": "^5.75.0"
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.4.1",
-    "@tauri-apps/api": "^1.4.0",
-    "@tauri-apps/cli": "^1.2.3",
-    "husky": "^8.0.3"
-  },
-  "engines": {
-    "node": ">=19.4.0",
-    "npm": "please-use-pnpm",
-    "yarn": "please-use-pnpm",
-    "pnpm": ">=7.27.0"
+    "@angular-devkit/build-angular": "^17.0.3",
+    "@angular/cli": "^17.0.3",
+    "@angular/compiler-cli": "^17.0.0",
+    "@tauri-apps/api": "^1.5.1",
+    "@tauri-apps/cli": "^1.5.7",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.2.2"
   }
 }
